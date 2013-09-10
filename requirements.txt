@@ -1,0 +1,13 @@
+Flask==0.10.1
+Flask-KVSession==0.4
+Flask-OAuth==0.12
+Jinja2==2.7
+MarkupSafe==0.18
+Werkzeug==0.9.3
+gunicorn==17.5
+honcho==0.4.2
+httplib2==0.8
+itsdangerous==0.23
+oauth2==1.5.211
+simplekv==0.6
+wsgiref==0.1.2
