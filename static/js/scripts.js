@@ -27,7 +27,7 @@ function get_server_status() {
       create_alert('#le-alert', 'success', 'Connected', 'You can use the commands below')
     }, 
     error: function(jqXHR, textStatus, errorThrown) {
-      //alert(textStatus);
+      alert(textStatus);
       create_alert('#le-alert', 'error', 'Error', 'Check connectivity ' + errorThrown);
      },
      complete: function(jqXHR, textStatus) {
