@@ -29,11 +29,6 @@ store = DictStore()
 
 # This will replace the app's session handling
 KVSessionExtension(store, app)
-
-# Update client_secrets.json with your Google API project information.
-# Do not change this assignment.
-# CLIENT_ID = json.loads(
-#     open('client_secrets.json', 'r').read())['web']['client_id']
 	
 
 # You must configure these 3 values from Google APIs console
@@ -41,11 +36,10 @@ KVSessionExtension(store, app)
 # You must set these environmental variables in heroku (also works with foreman/honcho)
 # https://devcenter.heroku.com/articles/config-vars
 
-#GOOGLE_CLIENT_ID = os.environ['GOOGLE_CLIENT_ID']
-#GOOGLE_CLIENT_SECRET = os.environ['GOOGLE_CLIENT_SECRET']
+GOOGLE_CLIENT_ID = os.environ['GOOGLE_CLIENT_ID']
+GOOGLE_CLIENT_SECRET = os.environ['GOOGLE_CLIENT_SECRET']
 
-GOOGLE_CLIENT_ID = '314135900379.apps.googleusercontent.com'
-GOOGLE_CLIENT_SECRET = 'fLf-Axm_vQJC7nBAzQ2Ea3Wt'
+
 
 # Must be one of the Redirect URIs from Google APIs console
 REDIRECT_URI = '/authorized'
@@ -53,7 +47,7 @@ REDIRECT_URI = '/authorized'
 AUTH_URI = "https://accounts.google.com/o/oauth2/auth"
 TOKEN_URI = "https://accounts.google.com/o/oauth2/token"
 
-#USERWHITELIST = os.environ['USERWHITELIST']
+USERWHITELIST = os.environ['USERWHITELIST']
 USERWHITELIST = []
 
 oauth = OAuth()

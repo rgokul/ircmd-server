@@ -1,3 +1,10 @@
+# SublimeText project files
+*.sublime-workspace
+
+# Environment files
+.env
+
+# Compiled py files
 *.py[cod]
 
 # C extensions

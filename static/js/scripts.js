@@ -20,6 +20,7 @@ function create_alert(obj, status, title, text) {
 
 function get_server_status() {
   'use strict';
+  clear_alert('#le-alert');
   $.ajax({url:"/getStatus", 
     success: function(data, textStatus, jqXHR) {
       //alert(textStatus);
@@ -28,15 +29,17 @@ function get_server_status() {
     error: function(jqXHR, textStatus, errorThrown) {
       //alert(textStatus);
       create_alert('#le-alert', 'error', 'Error', 'Check connectivity ' + errorThrown);
-     }
+     },
+     complete: function(jqXHR, textStatus) {
+      // Schedule the next request when the current one's complete
+      setTimeout(get_server_status, 30000);
+      }
   });
 };
 
 $(window).load(function() {
   $('#btn-alert').click(function () {
     'use strict';
-
-    clear_alert('#le-alert');
     get_server_status();
     });
   });    
